@@ -1,20 +1,3 @@
-/* Задания на урок:
-
-1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" -
-новый фильм добавляется в список. Страница не должна перезагружаться.
-Новый фильм должен добавляться в movieDB.movies.
-Для получения доступа к значению input - обращаемся к нему как input.value;
-P.S. Здесь есть несколько вариантов решения задачи, принимается любой, но рабочий.
-
-2) Если название фильма больше, чем 21 символ - обрезать его и добавить три точки
-
-3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
-
-4) Если в форме стоит галочка "Сделать любимым" - в консоль вывести сообщение:
-"Добавляем любимый фильм"
-
-5) Фильмы должны быть отсортированы по алфавиту */
-
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -53,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		movieList.innerHTML = "";
 		arr = movieDB.movies.sort();
 		arr.forEach(function(film, i) {
-			movieList.innerHTML += `<li class="promo__interactive-item">${i + 1}. ${film}<div class="delete"></div></li>`;
+			movieList.innerHTML += `<li class="promo__interactive-item">${i + 1}. ${film}<div class="delete" id="${i}"></div></li>`;
 		});
 	}
 
@@ -75,20 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
 			sortMovie(newMovieArray);
 			addInput.value = "";
 		}
-		deleteMovie();
 	});
 
-	deleteMovie();
-
-	function deleteMovie() {
-		const deleteBtns = document.querySelectorAll('.delete');
-		deleteBtns.forEach((item, i) => {
-			item.addEventListener('click', function(event) {
-				delete movieDB.movies[i];
-				sortMovie(movieDB.movies);
-				deleteMovie();
-			});
-		});
-	}
+	movieList.addEventListener('click', (event) => {
+		if(event.target.classList.contains("delete")) {
+			delete movieDB.movies[event.target.id];
+			sortMovie(movieDB.movies);
+		}
+	});
 
 });
