@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d85be57-c5fd-43d3-82a9-1f7562979c58" name="Changes" comment="Запрос на сервер через XHR">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Продвинутый JS/js/script.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +88,7 @@
       <workItem from="1665157054382" duration="1546000" />
       <workItem from="1665158686433" duration="319000" />
       <workItem from="1665159052771" duration="2102000" />
+      <workItem from="1665161566751" duration="316000" />
     </task>
     <task id="LOCAL-00001" summary="Запрос на сервер через XHR">
       <created>1665158884603</created>
