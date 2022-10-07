@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d85be57-c5fd-43d3-82a9-1f7562979c58" name="Changes" comment="Запрос на сервер через XHR">
-      <change beforePath="$PROJECT_DIR$/js/script2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Продвинутый JS/js/script.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +19,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -88,7 +88,7 @@
       <workItem from="1665156290584" duration="380000" />
       <workItem from="1665157054382" duration="1546000" />
       <workItem from="1665158686433" duration="319000" />
-      <workItem from="1665159052771" duration="1772000" />
+      <workItem from="1665159052771" duration="2102000" />
     </task>
     <task id="LOCAL-00001" summary="Запрос на сервер через XHR">
       <created>1665158884603</created>
