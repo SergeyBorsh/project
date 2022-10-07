@@ -220,30 +220,31 @@ window.addEventListener('DOMContentLoaded', () => {
 			statusMessage.textContent = messages.loading;
 			form.append(statusMessage);
 
-			const request = new XMLHttpRequest();
-			request.open('POST', 'server.php');
-
-			request.setRequestHeader('Content-type', 'application/json');
-
 			const formData = new FormData(form);
 			const data = {};
 			formData.forEach(function(value, key) {
 				data[key] = value;
 			});
 
-
-			request.onload = () => {
-				if(request.status >= 400) {
-					statusMessage.textContent = messages.failure;
-				} else {
+			fetch("server.php", {
+				method: "GET",
+				headers: {
+					'Content-type': 'application/json'
+				},
+				body: formData
+			})
+				.then(data => data.json())
+				.then(data => {
 					console.log(request.response);
 					statusMessage.textContent = messages.success;
-					form.reset();
-					setTimeout(() => {
-						statusMessage.remove();
-					}, 2000);
-				}
-			};
+				}).catch(() => {
+				statusMessage.textContent = messages.failure;
+			}).finally(() => {
+				form.reset();
+				setTimeout(() => {
+					statusMessage.remove();
+				}, 2000);
+			});
 
 			request.send(JSON.stringify(data));
 
